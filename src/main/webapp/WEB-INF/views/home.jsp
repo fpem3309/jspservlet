@@ -17,11 +17,12 @@ function showfn() {
 
 #mainImg{
 	position: relative;
+	
 	}
 button.btn1{
 	position:absolute;
-	top:70px;
-	left:200px;
+	top:20%;
+	left:45%;
 }
 </style>
 
@@ -67,7 +68,7 @@ try {
 
 <div id="mainImg">
  <img src="<c:url value="/resources/img/worldmap.png"/>" class="animation-tossing text-center" style="width:100%">
- <button class="btn1" type="button" onclick="showfn()">버튼</button>
+ <button class="btn1" type="button" onclick="showfn()">영국</button>
 </div>
 </body>
 </html>
