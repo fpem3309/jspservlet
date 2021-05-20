@@ -9,7 +9,7 @@
 
 <script type="text/javascript">
 function showfn() {
-    location.href = "/www.naver.com";
+    location.href = "content.do";
 }
 </script>
 
@@ -29,42 +29,7 @@ button.btn1{
 </head>
 <body>
 
-<%@ page import = "java.sql.*, java.util.*" %>
-MySQL 데이터 읽기
-<%
-Class.forName("com.mysql.jdbc.Driver");
-Connection conn = null;
-Statement stmt = null;
-ResultSet rs = null;
-try {
-	conn = DriverManager.getConnection("jdbc:mysql://localhost:3306", "root", "fpem3309");
-	stmt = conn.createStatement();
-	rs = stmt.executeQuery("select * from study.movie");
-%>
-<br><br>----------------------------------------<br>
-<% while(rs.next()) { %>
-<br> 제목: <%= rs.getString("title") %><br>
---------------------------------------------<br><br>
-<%
-} 
-}catch (SQLException e) { %>
-<% e.printStackTrace(); %>
-<%	
-} finally {
-	if(rs!=null)
-		try {
-			rs.close();
-		} catch (SQLException e) {}
-	if(stmt!=null)
-		try {
-			stmt.close();
-		} catch (SQLException e) {}
-	if(conn!=null)
-		try {
-			conn.close();
-		} catch (SQLException e) {}
-}
-%>
+
 
 <div id="mainImg">
  <img src="<c:url value="/resources/img/worldmap.png"/>" class="animation-tossing text-center" style="width:100%">
