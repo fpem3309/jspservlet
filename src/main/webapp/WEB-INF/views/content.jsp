@@ -22,16 +22,17 @@ button.movies{
 </style>
 </head>
 <body>
-<%-- <table>
+<table>
+<td>ㅎㅇ</td>
 <c:forEach var="vo" items="${list}">
-        <tr>
+       <tr>   
           <td>${vo.title}</td>
           <td>${vo.content}</td>
           <td>${vo.opening_date}</td>
       </tr>
 </c:forEach>
-</table> --%>
-<%@ page import = "java.sql.*, java.util.*" %>
+</table>
+<%-- <%@ page import = "java.sql.*, java.util.*" %>
 <%
 Class.forName("com.mysql.jdbc.Driver");
 Connection conn = null;
@@ -69,6 +70,6 @@ try {
 			conn.close();
 		} catch (SQLException e) {}
 }
-%>
+%> --%>
 </body>
 </html>

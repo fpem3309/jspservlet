@@ -14,10 +14,10 @@ public class MovieDAOImpl implements MovieDAO{
 	private SqlSessionFactory sqlSessionFactory;
 	
 	@Override
-	public List<MovieVO> movieList() {
+	public List<MovieVO> movieList(MovieVO vo) {
 		SqlSession session = sqlSessionFactory.openSession();
-		List<MovieVO> list = session.selectList("MovieList");
+		List<MovieVO> list = session.selectList("movieList",vo);
 		session.close();
-		return null;
+		return list;
 	}
 }
