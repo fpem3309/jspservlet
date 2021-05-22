@@ -22,16 +22,18 @@ button.movies{
 </style>
 </head>
 <body>
-<table>
-<td>ㅎㅇ</td>
+
 <c:forEach var="vo" items="${list}">
-       <tr>   
-          <td>${vo.title}</td>
-          <td>${vo.content}</td>
-          <td>${vo.opening_date}</td>
-      </tr>
+	<button>   
+		${vo.title}
+		<br>
+		${vo.content}
+		<br>
+		${vo.opening_date}
+	</button>
 </c:forEach>
-</table>
+
+
 <%-- <%@ page import = "java.sql.*, java.util.*" %>
 <%
 Class.forName("com.mysql.jdbc.Driver");
