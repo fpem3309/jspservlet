@@ -16,7 +16,7 @@ function contentfn() {
 
 <style type="text/css">
 button.movies{
-	width:145px;
+	width:200px;
 	height:300px;
 }
 </style>
@@ -24,12 +24,12 @@ button.movies{
 <body>
 
 <c:forEach var="vo" items="${list}">
-	<button>   
+	<button class="movies">   
 		${vo.title}
 		<br>
-		${vo.content}
-		<br>
 		${vo.opening_date}
+		<br>
+		${vo.content}
 	</button>
 </c:forEach>
 
