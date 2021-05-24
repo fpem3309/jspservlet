@@ -9,17 +9,11 @@
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
+
 <script type="text/javascript">
-$(function(){
-	$('.movies').click(function(){
-		if($('.a').css('display')=='none'){
-			$('.a').show();	
-		}else{
-			$('.a').hide();
-		}
-		
-	});
-});
+	function contentFn(){
+		location.href="<c:url value="/detail.do"/>"; //?movie_no="+ movie_no
+	}
 </script>
 
 <style type="text/css">
@@ -27,21 +21,20 @@ button.movies{
 	width:200px;
 	height:300px;
 }
-div.a{
+div.content{
 	display:none;
+	width:200px;
+	height:300px;
 }
 </style>
 </head>
 <body>
 
-<c:forEach var="vo" items="${list}">
-	<button class="movies">   
-		${vo.title}
-		<br>
-		${vo.opening_date}
-		<br>
+<c:forEach var="vo" items="${list}" varStatus="status">
+		<button class="movies" onclick="contentFn()">
+		${vo.title} ${vo.movie_no}
 	</button>
-	<div class="a">${vo.content}</div>
+	
 </c:forEach>
 </body>
 </html>

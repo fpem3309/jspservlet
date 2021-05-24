@@ -28,4 +28,11 @@ public class HomeController {
 		model.addAttribute("list",list);
 		return "content";
 	}
+	
+	@RequestMapping("/detail.do")
+	public String Detail(Model model, MovieVO vo) {
+		List<MovieVO> list = movieDAO.movieList(vo);
+		model.addAttribute("list",list);
+		return "detail";
+	}
 }
