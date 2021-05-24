@@ -8,16 +8,27 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
 <script type="text/javascript">
-function contentfn() {
-	location.href = "";
-}
+$(function(){
+	$('.movies').click(function(){
+		if($('.a').css('display')=='none'){
+			$('.a').show();	
+		}else{
+			$('.a').hide();
+		}
+		
+	});
+});
 </script>
 
 <style type="text/css">
 button.movies{
 	width:200px;
 	height:300px;
+}
+div.a{
+	display:none;
 }
 </style>
 </head>
@@ -29,49 +40,8 @@ button.movies{
 		<br>
 		${vo.opening_date}
 		<br>
-		${vo.content}
 	</button>
+	<div class="a">${vo.content}</div>
 </c:forEach>
-
-
-<%-- <%@ page import = "java.sql.*, java.util.*" %>
-<%
-Class.forName("com.mysql.jdbc.Driver");
-Connection conn = null;
-Statement stmt = null;
-ResultSet rs = null;
-try {
-	conn = DriverManager.getConnection("jdbc:mysql://localhost:3306", "root", "fpem3309");
-	stmt = conn.createStatement();
-	rs = stmt.executeQuery("select * from study.movie");
-%>
-<% while(rs.next()) { %>
-<button class="movies" onclick="contentfn()">
-<br> 제목: <%= rs.getString("title") %><br>
-줄거리: <%= rs.getString("content") %><br>
-개봉일: <%= rs.getString("opening_date") %>
-<br>
-<br>
-</button>
-<%
-} 
-}catch (SQLException e) { %>
-<% e.printStackTrace(); %>
-<%	
-} finally {
-	if(rs!=null)
-		try {
-			rs.close();
-		} catch (SQLException e) {}
-	if(stmt!=null)
-		try {
-			stmt.close();
-		} catch (SQLException e) {}
-	if(conn!=null)
-		try {
-			conn.close();
-		} catch (SQLException e) {}
-}
-%> --%>
 </body>
 </html>
