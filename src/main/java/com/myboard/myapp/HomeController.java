@@ -22,4 +22,8 @@ public class HomeController {
 		model.addAttribute("list",list);
 		return "home";
 	}
+	@RequestMapping("/content.do")
+	public String content(Model model) {
+		return "content";
+	}
 }
