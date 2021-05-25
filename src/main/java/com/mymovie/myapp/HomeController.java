@@ -17,8 +17,8 @@ public class HomeController {
 	private MovieDAO movieDAO;
 	
 	@RequestMapping("/home.do")
-	public String home(Model model, MovieVO vo) {
-		model.addAttribute("vo",vo);
+	public String home(/*Model model, MovieVO vo*/) {
+		/*model.addAttribute("vo",vo);*/
 		return "home";
 	}
 	
