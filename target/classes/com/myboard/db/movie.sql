@@ -8,4 +8,4 @@ content VARCHAR(2000) not null,
 opening_date DATE not null
 );
 
-select * from study.movie;
+select * from study.board;

@@ -18,8 +18,8 @@ public class HomeController {
 	
 	@RequestMapping("/home.do")
 	public String home(Model model, BoardVO vo) {
-		List<BoardVO> list = boardDAO.boardList(vo);
-		model.addAttribute("list",list);
+		/*List<BoardVO> list = boardDAO.boardList(vo);
+		model.addAttribute("list",list);*/
 		return "home";
 	}
 	@RequestMapping("/content.do")

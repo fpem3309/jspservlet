@@ -4,20 +4,9 @@ public class BoardVO {
 	private String board_no;
 	private String board_title;
 	private String board_content;
+	private String board_writer;
 	private String board_date;
 	private String board_hit;
-	
-	public BoardVO(String board_no, String board_title, String board_content, String board_date, String board_hit) {
-		super();
-		this.board_no = board_no;
-		this.board_title = board_title;
-		this.board_content = board_content;
-		this.board_date = board_date;
-		this.board_hit = board_hit;
-	}
-	public BoardVO() {
-		super();
-	}
 	public String getBoard_no() {
 		return board_no;
 	}
@@ -36,6 +25,12 @@ public class BoardVO {
 	public void setBoard_content(String board_content) {
 		this.board_content = board_content;
 	}
+	public String getBoard_writer() {
+		return board_writer;
+	}
+	public void setBoard_writer(String board_writer) {
+		this.board_writer = board_writer;
+	}
 	public String getBoard_date() {
 		return board_date;
 	}
@@ -51,7 +46,8 @@ public class BoardVO {
 	@Override
 	public String toString() {
 		return "BoardVO [board_no=" + board_no + ", board_title=" + board_title + ", board_content=" + board_content
-				+ ", board_date=" + board_date + ", board_hit=" + board_hit + "]";
+				+ ", board_writer=" + board_writer + ", board_date=" + board_date + ", board_hit=" + board_hit + "]";
 	}
+	
 }
 
